@@ -1,105 +1,113 @@
-# 🍱 Aplikasi Penjualan Online UMKM Dapur Debora
+# 🍱 Aplikasi Penjualan Online & POS UMKM Dapur Debora
 
-> **Desain Aplikasi Penjualan Online dengan Pendekatan User Interface dan User Experience pada UMKM Debora Store.**
+> **Digitalisasi Sistem Pemesanan dan Kasir UMKM Dapur Debora Berbasis Web (Full Stack PHP Native).**
 
-![Project Status](https://img.shields.io/badge/Status-In%20Development-orange)
-![PHP Version](https://img.shields.io/badge/PHP-8.2-777BB4)
+![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-777BB4)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3)
+![Database](https://img.shields.io/badge/MySQL-Database-orange)
 
-## 📖 Latar Belakang
-Proyek ini bertujuan untuk mendigitalisasi proses pemesanan pada **UMKM Dapur Debora (D-Kitchen)**. Sebelumnya, pemesanan dilakukan secara manual melalui WhatsApp yang sering menyebabkan penumpukan chat dan kesalahan pencatatan. 
+## 📖 Tentang Proyek
+Aplikasi ini dibangun untuk memodernisasi operasional **UMKM Dapur Debora**. Sistem ini menggabungkan dua fungsi utama:
+1.  **Online Ordering (Web Store):** Memungkinkan pelanggan memesan makanan secara online, melakukan pembayaran transfer, dan mengunggah bukti bayar.
+2.  **Point of Sale (Kasir):** Memudahkan karyawan toko menginput pesanan *walk-in* (makan di tempat/bungkus) secara cepat tanpa proses checkout yang rumit.
 
-Aplikasi ini dirancang berbasis web dengan fokus pada kemudahan penggunaan (**User Experience**) dan tampilan yang menarik (**User Interface**), memungkinkan pelanggan memesan makanan secara mandiri dan pemilik usaha mengelola pesanan dengan lebih efisien.
+## 🚀 Fitur Lengkap
 
-## 🚀 Fitur Utama
-### Sisi Pelanggan (Frontend)
-- **Katalog Menu Digital:** Menampilkan daftar makanan lengkap dengan foto, deskripsi, dan harga.
-- **Keranjang Belanja:** Menyimpan pesanan sementara sebelum checkout.
-- **Checkout Pemesanan:** Form konfirmasi pesanan dan upload bukti pembayaran.
-- **Responsive Design:** Tampilan optimal di HP (Mobile-First) maupun Desktop.
+### 👤 Sisi Pelanggan (Frontend Store)
+*   **Katalog Menu Digital:** Tampilan menu responsif (Mobile-First) dengan foto, harga, dan stok realtime.
+*   **Registrasi & Login:** Sistem akun pelanggan untuk keamanan pesanan.
+*   **Keranjang Belanja (Cart):** Menambah item, update jumlah, dan hapus item.
+*   **Checkout & Pembayaran:** Konfirmasi alamat kirim dan upload bukti transfer manual.
+*   **Riwayat Pesanan:** Memantau status pesanan (Pending / Process / Completed).
 
-### Sisi Admin/Pemilik (Backend) - *Coming Soon*
-- **Dashboard:** Ringkasan penjualan harian/bulanan.
-- **Manajemen Produk:** Tambah, Edit, dan Hapus menu makanan.
-- **Manajemen Pesanan:** Konfirmasi pesanan masuk (Pending -> Proses -> Selesai).
+### 👮 Sisi Admin & Kasir (Backend Panel)
+*   **Dashboard Statistik:** Ringkasan total produk, total pesanan, dan jumlah pelanggan.
+*   **Manajemen Produk (CRUD):** Tambah, Edit, Hapus menu, update harga & stok, upload foto produk.
+*   **Manajemen Pesanan:** Verifikasi bukti bayar pelanggan dan update status pesanan.
+*   **Aplikasi Kasir (POS):** Halaman khusus input transaksi tunai (*Walk-in Customer*) dengan kalkulasi kembalian otomatis.
+*   **Laporan:** (Terintegrasi di Dashboard & List Pesanan).
 
-## 🛠️ Teknologi yang Digunakan
-- **Bahasa Pemrograman:** PHP (Native)
-- **Database:** MySQL
-- **Frontend:** HTML5, CSS3, Bootstrap 5
-- **Server Environment:** XAMPP / PHP Built-in Server
-- **Tools Desain:** Figma (untuk prototyping UI/UX)
+## 🛠️ Teknologi (Tech Stack)
+*   **Backend:** PHP Native (Tanpa Framework) - *Struktur Modular*.
+*   **Frontend:** Bootstrap 5 (CSS/JS Framework).
+*   **Database:** MySQL / MariaDB.
+*   **Server:** Apache (XAMPP) atau PHP Built-in Server.
+*   **Aset:** Font Awesome (Ikon).
 
 ## 📂 Struktur Folder
-```
+```text
 debora-store-web/
-├── assets/             # File statis (CSS, Gambar, JS)
-├── config/             # Konfigurasi database
-├── includes/           # Potongan layout (Header, Navbar, Footer)
-├── index.php           # Halaman Utama
-├── db_debora.sql       # File Database SQL
-└── README.md           # Dokumentasi Proyek
+├── admin/              # Halaman Panel Admin & POS
+│   ├── includes/       # Navbar Admin
+│   ├── index.php       # Dashboard
+│   ├── products.php    # CRUD Produk
+│   ├── orders.php      # Manajemen Pesanan
+│   └── pos.php         # Aplikasi Kasir
+├── assets/             # File Statis
+│   ├── css/            # Style Custom
+│   ├── img/            # Foto Produk
+│   └── uploads/        # Bukti Transfer User
+├── config/             # Koneksi Database
+├── includes/           # Layout Frontend (Navbar, Footer)
+├── debora_store.sql    # File Backup Database
+├── index.php           # Halaman Utama Toko
+├── cart.php            # Halaman Keranjang
+├── checkout.php        # Proses Pesanan
+├── login.php           # Login Page
+└── README.md           # Dokumentasi
 ```
 
-## 💻 Cara Menjalankan (Instalasi)
+## 💻 Cara Instalasi & Menjalankan
 
 ### 1. Persiapan Database
-1. Pastikan **XAMPP** sudah terinstall dan **MySQL** sudah dijalankan.
-2. Buka `http://localhost/phpmyadmin`.
-3. Buat database baru dengan nama **`db_debora`**.
-4. Import file `db_debora.sql` atau jalankan query SQL yang tersedia.
+1.  Pastikan **XAMPP** (Apache & MySQL) sudah berjalan.
+2.  Buka `http://localhost/phpmyadmin`.
+3.  Buat database baru bernama: **`debora_store`**.
+4.  Import file **`debora_store.sql`** yang ada di dalam folder proyek ini.
 
-### 2. Konfigurasi Koneksi
-Buka file `config/database.php` dan sesuaikan dengan settingan XAMPP Anda:
+### 2. Konfigurasi Proyek
+Buka file `config/database.php` dan sesuaikan jika ada perbedaan password XAMPP:
 ```php
 $host = "localhost";
 $user = "root";
-$pass = "";       // Default XAMPP kosong
-$db   = "db_debora";
+$pass = ""; // Kosongkan jika default XAMPP
+$db   = "debora_store";
 ```
 
-### 3. Menjalankan Server
-Jika tidak menggunakan folder `htdocs`, Anda bisa menggunakan terminal:
-
-1. Buka Terminal / PowerShell di folder proyek.
-2. Jalankan perintah berikut:
-   ```powershell
-   php -S localhost:8000
-   ```
-3. Buka browser dan akses: **http://localhost:8000**
-
-## 📝 To-Do List (Roadmap Pengembangan)
-- [x] **Fase 1: Inisialisasi**
-    - [x] Setup Struktur Folder & Git.
-    - [x] Desain Database (ERD & SQL).
-    - [x] Koneksi Database PHP.
-- [x] **Fase 2: Tampilan Dasar**
-    - [x] Implementasi Bootstrap 5.
-    - [x] Halaman Landing Page & Daftar Menu.
-    - [x] Styling CSS (Tema Hijau Dapur Debora).
-- [ ] **Fase 3: Transaksi**
-    - [ ] Fitur Login & Register Pelanggan.
-    - [ ] Logika Keranjang Belanja (Session).
-    - [ ] Halaman Checkout & Kirim Pesanan ke Database.
-- [ ] **Fase 4: Admin Panel**
-    - [ ] Halaman Login Admin.
-    - [ ] CRUD Data Produk (Tambah/Hapus Menu).
-    - [ ] Rekap Laporan Penjualan.
-
-## 👥 Kontributor
-* **Muhammad Rafi Norikhsan** - *Developer & Researcher*
-* **Tamara Debora Permata Sianipar** - *Developer & Researcher*
+### 3. Menjalankan Aplikasi
+Buka terminal di folder proyek, lalu jalankan:
+```powershell
+php -S localhost:8000
+```
+Buka browser dan akses: **[http://localhost:8000](http://localhost:8000)**
 
 ---
-*Dibuat untuk memenuhi Tugas Mata Kuliah Metodologi Penelitian - Universitas Pamulang.*
 
+## 🔑 Akun Demo (Default)
 
-### Cara Menggunakannya:
-1.  Buat file baru di VS Code bernama `README.md`.
-2.  Paste kode di atas.
-3.  Simpan.
-4.  Lakukan commit lagi agar file ini masuk ke GitHub:
-    ```powershell
-    git add README.md
-    git commit -m "Menambahkan dokumentasi README project"
-    git push
+| Role | Email | Password | Fungsi |
+| :--- | :--- | :--- | :--- |
+| **Admin** | `admin@debora.com` | `admin123` | Akses Penuh (Dashboard, Produk, Order, POS) |
+| **Kasir** | `kasir@debora.com` | `kasir123` | Akses POS & Validasi Order |
+| **Customer** | *(Daftar Sendiri)* | *(Bebas)* | Belanja Online |
+
+*(Catatan: Password menggunakan enkripsi MD5)*
+
+---
+
+## ✅ Checklist Pengembangan
+- [x] **Fase 1: Inisialisasi** (Setup Git, DB, Config)
+- [x] **Fase 2: Frontend Toko** (Katalog, Keranjang, Checkout)
+- [x] **Fase 3: Autentikasi** (Login Admin & Customer)
+- [x] **Fase 4: Backend Admin** (CRUD Produk, Kelola Stok)
+- [x] **Fase 5: Manajemen Transaksi** (Verifikasi Bukti Bayar)
+- [x] **Fase 6: Fitur Kasir/POS** (Transaksi Tunai Walk-in)
+- [x] **Fase 7: Finishing** (Perbaikan UI/UX & Dokumentasi)
+
+## 👥 Tim Pengembang
+*   **Muhammad Rafi Norikhsan** - *Full Stack Developer*
+*   **Tamara Debora Permata Sianipar** - *UI/UX Designer & Researcher*
+
+---
+*Dibuat dengan ❤️ untuk UMKM Indonesia.*
