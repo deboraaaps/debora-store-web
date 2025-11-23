@@ -1,12 +1,14 @@
 <?php
+session_start(); 
+
 $host = "localhost";
 $user = "root";
-$pass = ""; // Kosongkan jika pakai XAMPP default
-$db   = "db_debora";
+$pass = "";
+$db   = "debora_store";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
 if (!$conn) {
-    die("Koneksi Gagal: " . mysqli_connect_error());
+    die("Koneksi Database Gagal: " . mysqli_connect_error());
 }
 ?>
