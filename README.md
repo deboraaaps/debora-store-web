@@ -106,8 +106,7 @@ Buka browser dan akses: **[http://localhost:8000](http://localhost:8000)**
 - [x] **Fase 7: Finishing** (Perbaikan UI/UX & Dokumentasi)
 
 ## 👥 Tim Pengembang
-*   **Muhammad Rafi Norikhsan** - *Full Stack Developer*
-*   **Tamara Debora Permata Sianipar** - *UI/UX Designer & Researcher*
+*   **Tamara Debora Permata Sianipar** - *UI/UX Designer & Researcher & Full Stack Developer*
 
 ---
 *Dibuat dengan ❤️ untuk UMKM Indonesia.*
